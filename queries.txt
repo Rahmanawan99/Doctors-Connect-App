@@ -1,0 +1,56 @@
+// create table
+
+create table patients (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+patientName VARCHAR(30) NOT NULL,
+email VARCHAR(255) NOT NULL UNIQUE,
+password VARCHAR(50),
+    age int NOT NULL,
+    phoneNo varchar(50) NOT NULL,
+    country VARCHAR(50) NOT NULL,
+    gender VARCHAR(50) NOT NULL,
+    address VARCHAR(255),
+    
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+
+)
+
+
+
+// doctors table
+
+create table doctors (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+doctorName VARCHAR(30) NOT NULL,
+email VARCHAR(255) NOT NULL UNIQUE,
+password VARCHAR(50),
+    age int NOT NULL,
+    phoneNo varchar(50) NOT NULL,
+    country VARCHAR(50) NOT NULL,
+    gender VARCHAR(50) NOT NULL,
+    address VARCHAR(255),
+    designation VARCHAR(255) NOT NULL,
+    workingDays INT NOT NULL,
+    salary INT NOT NULL,
+    education VARCHAR(255) NOT NULL,
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+
+)
+
+// disease
+
+CREATE TABLE diseases (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    diseaseName VARCHAR(255) NOT NULL UNIQUE,
+    description TEXT NOT NULL
+)
+
+CREATE TABLE problems (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name varchar(50) NOT NULL, 
+    phoneNo varchar(50) NOT NULL,
+    problem TEXT NOT NULL,
+    askWith VARCHAR(500) NOT NULL,
+    askWithEmail VARCHAR(500) NOT NULL,
+    createdAt VARCHAR(500) NOT NULL
+)
